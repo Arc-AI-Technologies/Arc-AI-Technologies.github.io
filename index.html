@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc AI Tech | AI Services & Products</title>
+    <style>
+        /* --- Basic Reset & Typography --- */
+        :root {
+            --primary-color: #0a2540; /* Dark Blue */
+            --secondary-color: #f6f9fc; /* Light Gray Background */
+            --accent-color: #00d4ff; /* Bright Cyan/Blue Accent */
+            --text-color: #333;
+            --light-text-color: #f8f8f8;
+            --heading-font: 'Arial', sans-serif;
+            --body-font: 'Georgia', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; color: var(--primary-color); }
+        p { margin-bottom: 20px; }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 0;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            background: #fff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            color: #fff;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: var(--heading-font);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background-color: #fff;
+        }
+
+        /* --- Services & Products Section --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .services, .products {
+            background-color: var(--secondary-color);
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .card .product-link {
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .card .product-link:hover {
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
+
+        /* --- About Section --- */
+        .about .container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .navbar .container {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 15px;
+            }
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Arc AI Tech</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Innovating Tomorrow with Artificial Intelligence</h1>
+                <p>We build intelligent, scalable, and cutting-edge AI products and provide expert services to help your business thrive in the digital age.</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 style="text-align: center;">Our AI Services</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Custom AI Model Development</h3>
+                        <p>We design and build bespoke machine learning models tailored to your unique data and business challenges, from predictive analytics to natural language processing.</p>
+                    </div>
+                    <div class="card">
+                        <h3>AI Strategy & Consulting</h3>
+                        <p>Leverage our expertise to craft a data-driven AI strategy. We help you identify opportunities, define project roadmaps, and integrate AI into your core operations.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Data Science & Analytics</h3>
+                        <p>Unlock the potential of your data. Our team provides deep analysis, visualization, and insight generation to inform your most critical business decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <h2 style="text-align: center;">Our AI Products</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Product One: InsightEngine</h3>
+                        <p>A powerful predictive analytics platform that delivers real-time business forecasts and customer behavior insights with unparalleled accuracy.</p>
+                        <a href="#" class="product-link">Learn More &rarr;</a>
+                    </div>
+                    <div class="card">
+                        <h3>Product Two: AutomateFlow</h3>
+                        <p>An intelligent automation tool that uses AI to streamline complex workflows, reducing manual effort and eliminating operational errors.</p>
+                        <a href="#" class="product-link">Learn More &rarr;</a>
+                    </div>
+                    <div class="card">
+                        <h3>Product Three: VisionAPI</h3>
+                        <p>A robust computer vision API for image recognition, object detection, and data extraction, easily integrated into any application.</p>
+                        <a href="#" class="product-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>
+                    At Arc AI Tech, we are a passionate team of AI researchers, engineers, and strategists dedicated to solving complex problems with intelligent technology. Our mission is to democratize access to artificial intelligence, empowering organizations of all sizes to innovate and lead their industries. We believe in a future where human ingenuity is amplified by machine intelligence.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Let's Build the Future Together</h2>
+            <p>Ready to start your next AI project? We'd love to hear from you.</p>
+            <p>Email us at: <a href="mailto:contact@[your-domain.com]">contact@[your-domain.com]</a></p>
+            <br>
+            <p>&copy; 2025 Arc AI Tech . All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
