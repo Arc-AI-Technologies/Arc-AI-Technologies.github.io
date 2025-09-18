@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc AI Tech | AI Services & Products</title>
+    <title>Arc AI Tech | Custom AI Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- Basic Reset & Typography --- */
         :root {
-            --primary-color: #0a2540; /* Dark Blue */
-            --secondary-color: #f6f9fc; /* Light Gray Background */
-            --accent-color: #00d4ff; /* Bright Cyan/Blue Accent */
-            --text-color: #333;
-            --light-text-color: #f8f8f8;
-            --heading-font: 'Arial', sans-serif;
-            --body-font: 'Georgia', serif;
+            --bg-dark: #0F0F0F;
+            --bg-card: #1C1C1C;
+            --border-color: #2F2F2F;
+            --text-light: #FFFFFF;
+            --text-muted: #A0A0A0;
+            --accent-orange: #FFA500;
+            --accent-purple: #BE82FF;
         }
 
         * {
@@ -22,217 +24,272 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: var(--body-font);
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #fff;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
-
-        h1, h2, h3 {
-            font-family: var(--heading-font);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.2rem; color: var(--primary-color); }
-        p { margin-bottom: 20px; }
 
         .container {
             width: 90%;
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 0;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
+
         section {
-            padding: 60px 0;
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 4rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
+        p { color: var(--text-muted); line-height: 1.7; }
+        
+        /* --- Buttons & Links --- */
+        .btn {
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-outline {
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
+        }
+        .btn-outline:hover {
+            background: var(--accent-orange);
+            color: var(--bg-dark);
         }
 
         /* --- Header & Navigation --- */
         .navbar {
-            background: #fff;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .navbar .container {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0;
         }
-
-        .navbar .logo {
+        .nav-logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-weight: 700;
             text-decoration: none;
+            color: var(--text-light);
         }
-
         .nav-links {
-            list-style: none;
             display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
         }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
         .nav-links a {
+            color: var(--text-muted);
             text-decoration: none;
-            color: var(--primary-color);
-            font-weight: bold;
             transition: color 0.3s ease;
         }
-
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--text-light);
         }
 
         /* --- Hero Section --- */
         .hero {
-            background-color: var(--primary-color);
-            color: var(--light-text-color);
             text-align: center;
-            padding: 100px 0;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
         }
-
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(150px);
+            z-index: -1;
+        }
+        .hero::before {
+            background: rgba(0, 128, 255, 0.3);
+            top: -100px;
+            left: -150px;
+        }
+        .hero::after {
+            background: rgba(255, 0, 128, 0.3);
+            bottom: -100px;
+            right: -150px;
+        }
         .hero h1 {
-            color: #fff;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        .hero h1 .life { color: var(--accent-purple); }
+        .hero h1 .dream { color: var(--accent-orange); }
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        .hero-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .hero-form input[type="email"] {
+            padding: 15px;
+            width: 300px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        .hero-form button {
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: none;
+            background: var(--accent-orange);
+            color: var(--bg-dark);
+            font-weight: 600;
+            cursor: pointer;
         }
         
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: var(--heading-font);
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            background-color: #fff;
-        }
-
-        /* --- Services & Products Section --- */
+        /* --- Products & About Section --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for 4 cards */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
-        
-        .services, .products {
-            background-color: var(--secondary-color);
-        }
-
         .card {
-            background: #fff;
+            background: var(--bg-card);
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: var(--accent-orange);
         }
-
         .card h3 {
             margin-bottom: 15px;
-            color: var(--primary-color);
+            font-size: 1.5rem;
         }
-        
-        .card .product-link {
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-            padding: 10px 15px;
-            border: 2px solid var(--secondary-color);
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .card .product-link:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-            border-color: var(--primary-color);
+        .card .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
         }
 
-        /* --- About Section --- */
-        .about .container {
-            max-width: 800px;
+        /* About Section */
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+            text-align: left;
+        }
+        #about h2 { text-align: left; }
+        .about-illustration {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-orange));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        /* --- CTA Section --- */
+        #cta .container {
+            background: var(--accent-purple);
+            padding: 60px;
+            border-radius: 20px;
             text-align: center;
         }
-
+        #cta h2, #cta p { color: var(--bg-dark); }
+        #cta form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #cta input {
+            padding: 15px;
+            width: 300px;
+            border-radius: 8px;
+            border: none;
+        }
+        #cta button {
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: none;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            cursor: pointer;
+        }
+        
         /* --- Footer --- */
-        footer {
-            background: var(--primary-color);
-            color: var(--light-text-color);
-            text-align: center;
-            padding: 40px 0;
+        .footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
         }
-        
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
         }
-        
-        footer a:hover {
-            text-decoration: underline;
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--text-muted); text-decoration: none; }
+        .footer-col a:hover { color: var(--text-light); }
 
-        /* --- Responsive Design --- */
+        /* --- Responsive --- */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            h2 { font-size: 1.8rem; }
-            
-            .navbar .container {
-                flex-direction: column;
-            }
-            .nav-links {
-                margin-top: 15px;
-            }
-            .nav-links li {
-                margin: 0 10px;
-            }
+            h2 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .hero-form, #cta form { flex-direction: column; align-items: center; }
+            .hero-form input, #cta input { width: 100%; }
+            #about .about-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Arc AI Tech</a>
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">ArcTech</a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#products">Products</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#cta" class="btn btn-outline">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -241,58 +298,114 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Innovating Tomorrow with Artificial Intelligence</h1>
-                <p>We build intelligent, scalable, and cutting-edge AI products and provide expert services to help your business thrive in the digital age.</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
+                <h1>
+                    Breathe <span class="life">Life</span> to your <span class="dream">dream</span> AI Projects
+                </h1>
+                <p>We build intelligent, scalable, and cutting-edge AI products to help your business thrive in the digital age.</p>
+                <form class="hero-form" action="mailto:your-email@example.com">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">GO</button>
+                </form>
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section id="products">
             <div class="container">
-                <h2 style="text-align: center;">Our AI Services</h2>
+                <h2>Our AI Products</h2>
                 <div class="grid">
                     <div class="card">
-                        <h3>Custom AI Model Development</h3>
-                        <p>We design and build bespoke machine learning models tailored to your unique data and business challenges, from predictive analytics to natural language processing.</p>
+                        <div>
+                            <span class="service-icon">🔬</span>
+                            <h3>AI Researcher</h3>
+                            <p>An intelligent agent powered by Gemini that conducts research and provides accurate, well-supported citations.</p>
+                        </div>
+                        <a href="https://github.com/Joggyjagz7/Gemini-AI-Reseacher-with-Citations" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 20px;">View on GitHub</a>
                     </div>
                     <div class="card">
-                        <h3>AI Strategy & Consulting</h3>
-                        <p>Leverage our expertise to craft a data-driven AI strategy. We help you identify opportunities, define project roadmaps, and integrate AI into your core operations.</p>
+                        <div>
+                            <span class="service-icon">⚖️</span>
+                            <h3>Legal AI Assistant</h3>
+                            <p>A specialized tool to analyze legal documents, summarize complex cases, and assist with legal research tasks.</p>
+                        </div>
+                        <a href="https://github.com/Joggyjagz7/Legal-ai-assistant" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 20px;">View on GitHub</a>
                     </div>
                     <div class="card">
-                        <h3>Data Science & Analytics</h3>
-                        <p>Unlock the potential of your data. Our team provides deep analysis, visualization, and insight generation to inform your most critical business decisions.</p>
+                        <div>
+                            <span class="service-icon">📚</span>
+                            <h3>RAG Document Engine</h3>
+                            <p>A Retrieval-Augmented Generation system for querying and extracting precise answers from your document stores.</p>
+                        </div>
+                        <a href="https://github.com/Joggyjagz7/RAG-project-test" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 20px;">View on GitHub</a>
+                    </div>
+                    <div class="card">
+                        <div>
+                           <span class="service-icon">🏢</span>
+                            <h3>Company Researcher</h3>
+                            <p>An AI tool that automates the process of gathering, analyzing, and synthesizing public information about companies.</p>
+                        </div>
+                        <a href="https://github.com/Joggyjagz7/company-researcher" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 20px;">View on GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="products" class="products">
+        <section id="about">
             <div class="container">
-                <h2 style="text-align: center;">Our AI Products 🚀</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div>
-                            <h3>AI Researcher with Citations</h3>
-                            <p>An intelligent agent powered by Gemini that conducts research and provides accurate, well-supported citations for every claim.</p>
-                        </div>
-                        <a href="https://github.com/Joggyjagz7/Gemini-AI-Reseacher-with-Citations" target="_blank" rel="noopener noreferrer" class="product-link">View on GitHub &rarr;</a>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Engineered for Intelligence</h2>
+                        <p>At <strong>ArcTech</strong>, we don't just build software; we engineer intelligence. Our mission is to transform complex AI potential into practical, powerful tools that solve real-world problems.</p>
+                        <p>We focus on creating efficient, scalable, and intuitive solutions that give your business a competitive edge. We believe in a future where human ingenuity is amplified by machine intelligence, and we're building the tools to make that happen.</p>
+                        <br>
+                        <a href="#cta" class="btn btn-outline">Let's Connect</a>
                     </div>
-                    <div class="card">
-                        <div>
-                            <h3>Legal AI Assistant</h3>
-                            <p>A specialized tool designed to analyze legal documents, summarize complex cases, and assist with legal research tasks.</p>
-                        </div>
-                        <a href="https://github.com/Joggyjagz7/Legal-ai-assistant" target="_blank" rel="noopener noreferrer" class="product-link">View on GitHub &rarr;</a>
-                    </div>
-                    <div class="card">
-                        <div>
-                            <h3>RAG Document Engine</h3>
-                            <p>A cutting-edge Retrieval-Augmented Generation (RAG) system for querying and extracting precise answers from your document stores.</p>
-                        </div>
-                        <a href="https://github.com/Joggyjagz7/RAG-project-test" target="_blank" rel="noopener noreferrer" class="product-link">View on GitHub &rarr;</a>
-                    </div>
-                    <div class="card">
-                        <div>
-                            <h3>Automated Company Researcher</h3>
-                            <p>An AI tool that automates the process of
+                    <div class="about-illustration">🤖</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <div class="container">
+                <h2>Let's discuss the idea</h2>
+                <p>Ready to start your next AI project? We'd love to hear from you.</p>
+                <br>
+                <form action="mailto:your-email@example.com">
+                    <input type="email" placeholder="Your email">
+                    <button type="submit">SEND</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="nav-logo">ArcTech</a>
+                <br>
+                <p>Get latest updates</p>
+                 <form class="hero-form" style="justify-content: flex-start;">
+                    <input type="email" placeholder="Your email">
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="https://github.com/Joggyjagz7/Gemini-AI-Reseacher-with-Citations" target="_blank" rel="noopener noreferrer">AI Researcher</a></li>
+                    <li><a href="https://github.com/Joggyjagz7/Legal-ai-assistant" target="_blank" rel="noopener noreferrer">Legal AI Assistant</a></li>
+                    <li><a href="https://github.com/Joggyjagz7/RAG-project-test" target="_blank" rel="noopener noreferrer">RAG Document Engine</a></li>
+                    <li><a href="https://github.com/Joggyjagz7/company-researcher" target="_blank" rel="noopener noreferrer">Company Researcher</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
